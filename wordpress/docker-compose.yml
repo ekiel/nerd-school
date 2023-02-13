@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8181:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wpdbuser
+      WORDPRESS_DB_PASSWORD: t0p5ekretd@tabas34WP
+      WORDPRESS_DB_NAME: wordpress-db
+    volumes:
+      - ./wordpress:/var/www/html
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: c66dev
+      MYSQL_USER: wpdbuser
+      MYSQL_PASSWORD: t0p5ekretd@tabas34WP
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - ./db:/var/lib/mysql

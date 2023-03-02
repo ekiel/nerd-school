@@ -19,7 +19,7 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_DATABASE: c66dev
+      MYSQL_DATABASE: wordpress-db
       MYSQL_USER: wpdbuser
       MYSQL_PASSWORD: t0p5ekretd@tabas34WP
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
